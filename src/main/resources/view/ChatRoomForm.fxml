@@ -6,19 +6,39 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.ChatRoomFormController">
    <children>
-      <ScrollPane layoutX="48.0" layoutY="75.0" prefHeight="388.0" prefWidth="309.0">
-         <content>
-            <VBox prefHeight="388.0" prefWidth="309.0" />
-         </content>
-      </ScrollPane>
+      <Pane fx:id="emojiPane" layoutX="47.0" layoutY="388.0" prefHeight="86.0" prefWidth="263.0">
+         <children>
+            <GridPane prefHeight="90.0" prefWidth="263.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton prefHeight="25.0" prefWidth="130.0" />
+                  <JFXButton prefHeight="25.0" prefWidth="130.0" GridPane.rowIndex="1" />
+                  <JFXButton prefHeight="25.0" prefWidth="132.0" GridPane.rowIndex="2" />
+                  <JFXButton prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" />
+                  <JFXButton prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXButton prefHeight="25.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
       <Pane layoutX="47.0" layoutY="485.0" prefHeight="43.0" prefWidth="263.0" style="-fx-background-color: #7bed9f; -fx-background-radius: 10;">
          <children>
             <JFXTextField fx:id="txtMessage" layoutX="32.0" layoutY="4.0" onAction="#txtMessageOnAction" prefHeight="35.0" prefWidth="200.0" promptText="Enter message" style="-fx-background-color: #7bed9f;">
@@ -26,12 +46,12 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="232.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="232.0" layoutY="7.0" onMouseClicked="#attachOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../Pictures/figma/icons8-paper-clip-32.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutY="8.0" onMouseClicked="#emojiOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../Pictures/figma/icons8-face-48.png" />
                </image>
@@ -42,10 +62,20 @@
          <graphic>
             <Pane prefHeight="43.0" prefWidth="37.0">
                <children>
-                  <Circle fill="DODGERBLUE" layoutX="14.0" layoutY="22.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#7bed9f" layoutX="14.0" layoutY="22.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="-2.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Pictures/figma/icons8-send-48.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </graphic>
       </JFXButton>
+      <ScrollPane layoutX="46.0" layoutY="110.0" prefHeight="370.0" prefWidth="310.0">
+         <content>
+            <VBox prefHeight="370.0" prefWidth="310.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
