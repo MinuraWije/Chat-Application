@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.ChatRoomFormController">
+<AnchorPane fx:id="rootNode" prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.ChatRoomFormController">
    <children>
       <Pane fx:id="emojiPane" layoutX="47.0" layoutY="388.0" prefHeight="86.0" prefWidth="263.0">
          <children>
@@ -29,12 +29,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXButton prefHeight="25.0" prefWidth="130.0" />
-                  <JFXButton prefHeight="25.0" prefWidth="130.0" GridPane.rowIndex="1" />
-                  <JFXButton prefHeight="25.0" prefWidth="132.0" GridPane.rowIndex="2" />
-                  <JFXButton prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" />
-                  <JFXButton prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <JFXButton prefHeight="25.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXButton fx:id="emoji1" prefHeight="25.0" prefWidth="130.0" />
+                  <JFXButton fx:id="emoji3" prefHeight="25.0" prefWidth="130.0" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="emoji5" prefHeight="25.0" prefWidth="132.0" GridPane.rowIndex="2" />
+                  <JFXButton fx:id="emoji2" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" />
+                  <JFXButton fx:id="emoji4" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="emoji6" prefHeight="25.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
@@ -74,7 +74,7 @@
       </JFXButton>
       <ScrollPane layoutX="46.0" layoutY="110.0" prefHeight="370.0" prefWidth="310.0">
          <content>
-            <VBox prefHeight="370.0" prefWidth="310.0" />
+            <VBox fx:id="vBox" prefHeight="370.0" prefWidth="310.0" />
          </content>
       </ScrollPane>
    </children>
