@@ -71,9 +71,6 @@ public class ChatRoomFormController {
     public void initialize(){
         name = LoginFormController.name;
 
-        /*if (LoginFormController.filePath !=null) {
-            imgAvatar.setImage(new Image(LoginFormController.filePath));
-        }*/
 
         emojiPane.setVisible(false);
         pane = false;
@@ -144,7 +141,7 @@ public class ChatRoomFormController {
 
                         ImageView imageView = new ImageView(path[1]);
                         imageView.setStyle("-fx-padding: 10px;");
-                        imageView.setFitHeight(180);
+                        imageView.setFitHeight(100);
                         imageView.setFitWidth(100);
 
                         HBox hBox = new HBox(imageView);
@@ -231,7 +228,7 @@ public class ChatRoomFormController {
 
                 ImageView imageView = new ImageView(path);
                 imageView.setStyle("-fx-padding: 100px;");
-                imageView.setFitHeight(180);
+                imageView.setFitHeight(100);
                 imageView.setFitWidth(100);
 
                 HBox hBox = new HBox(imageView);
